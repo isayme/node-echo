@@ -1,0 +1,31 @@
+{
+  "name": "echo",
+  "version": "0.0.1",
+  "description": "A TCP/UDP echo server",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha",
+    "pretest": "standard --env=mocha",
+    "start": "node ./"
+  },
+  "keywords": [
+    "echo",
+    "tcp",
+    "udp"
+  ],
+  "author": "iSayme <isaymeorg@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "co-mocha": "^1.2.0",
+    "mocha": "^3.4.2",
+    "power-assert": "^1.4.4",
+    "standard": "^10.0.2"
+  },
+  "dependencies": {
+    "config": "^1.26.1",
+    "winston": "^2.3.1"
+  }
+}
