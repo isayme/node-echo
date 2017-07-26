@@ -14,7 +14,8 @@ server.on('close', () => {
 })
 
 server.on('message', (msg, rinfo) => {
-  logger.verbose(`udp recv from ${JSON.stringify(rinfo)}: ${msg}`)
+  logger.info(`new udp connection from ${JSON.stringify(rinfo)}`)
+  logger.debug(`udp recv from ${JSON.stringify(rinfo)}: ${msg}`)
   server.send(msg, 0, rinfo.size, rinfo.port, rinfo.address)
 })
 
