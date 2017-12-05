@@ -3,9 +3,7 @@ const winston = require('winston')
 
 const logger = new winston.Logger({
   level: config.logLevel || 'info',
-  transports: [
-    new (winston.transports.Console)()
-  ]
+  transports: [new winston.transports.Console()]
 })
 
 module.exports = logger

@@ -8,7 +8,7 @@ const execOpts = {
 }
 
 module.exports = {
-  exec: (command) => {
+  exec: command => {
     return new Promise((resolve, reject) => {
       exec(command, execOpts, (err, stdout, stderr) => {
         if (err) {

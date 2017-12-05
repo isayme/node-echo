@@ -9,7 +9,8 @@
   "scripts": {
     "test": "NODE_ENV=test mocha",
     "pretest": "standard --env=mocha",
-    "start": "node ./"
+    "start": "node ./",
+    "pretty": "prettier-standard 'app/**/*.js' 'test/**/*.js'"
   },
   "keywords": [
     "echo",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "config": "^1.26.1",
+    "prettier-standard": "^6.0.0",
     "winston": "^2.3.1"
   }
 }

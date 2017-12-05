@@ -6,7 +6,7 @@ const server = net.createServer({
   allowHalfOpen: false
 })
 
-server.on('error', (err) => {
+server.on('error', err => {
   logger.error(err)
   throw err
 })
@@ -16,7 +16,7 @@ server.listen(config.port, () => {
   logger.info(`tcp echo listening ${JSON.stringify(address)}`)
 })
 
-server.on('connection', (sock) => {
+server.on('connection', sock => {
   const address = {
     address: sock.remoteAddress,
     port: sock.remotePort,
@@ -28,7 +28,7 @@ server.on('connection', (sock) => {
   sock.setTimeout(5000)
   sock.setNoDelay(true)
 
-  sock.on('error', (err) => {
+  sock.on('error', err => {
     logger.error(err)
   })
 
@@ -45,7 +45,7 @@ server.on('connection', (sock) => {
     sock.end()
   })
 
-  sock.on('data', (data) => {
+  sock.on('data', data => {
     logger.debug(`tcp recv from ${JSON.stringify(address)}: ${data}`)
     sock.write(data)
   })

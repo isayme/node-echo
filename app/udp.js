@@ -4,7 +4,7 @@ const logger = require('./logger')
 
 const server = dgram.createSocket('udp6')
 
-server.on('error', (err) => {
+server.on('error', err => {
   logger.error(`udp echo server error: ${err.stack}`)
   throw err
 })
